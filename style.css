@@ -7,21 +7,22 @@ box-sizing:border-box;
 html,body{
 width:100%;
 height:100%;
-overflow-x:hidden;
+overflow:hidden;
 font-family:Arial;
 background:linear-gradient(180deg,#07020d,#12001d,#090414);
 color:white;
 text-align:center;
 }
 
-/* ⭐ stars */
+/* ⭐ STARS CANVAS */
 #stars{
 position:fixed;
 top:0;
 left:0;
-width:100%;
-height:100%;
+width:100vw;
+height:100vh;
 z-index:-1;
+pointer-events:none;
 }
 
 /* container */
@@ -32,9 +33,11 @@ display:flex;
 flex-direction:column;
 align-items:center;
 gap:15px;
+position:relative;
+z-index:2;
 }
 
-/* 🔴 live */
+/* live */
 .live{
 padding:8px 15px;
 border:2px solid #ff5ca8;
@@ -43,14 +46,14 @@ font-size:13px;
 box-shadow:0 0 10px #ff5ca8;
 }
 
-/* 👤 PHOTO (FIXED SIZE + GLOW) */
+/* profile */
 .profile img{
-width:130px;
-height:130px;
+width:120px;
+height:120px;
 border-radius:50%;
 object-fit:cover;
 border:4px solid #a855f7;
-box-shadow:0 0 20px #a855f7, 0 0 40px rgba(168,85,247,0.4);
+box-shadow:0 0 25px #a855f7, 0 0 40px rgba(168,85,247,0.4);
 }
 
 /* text */
@@ -64,11 +67,11 @@ font-size:13px;
 opacity:0.8;
 }
 
-/* 🔘 BUTTON (WIDER + NICE GLOW) */
+/* button */
 button{
 padding:14px;
-width:95%;
-max-width:320px;
+width:90%;
+max-width:300px;
 font-size:16px;
 font-weight:bold;
 border:none;
@@ -77,16 +80,11 @@ background:linear-gradient(45deg,#6d28d9,#a855f7);
 color:white;
 cursor:pointer;
 box-shadow:0 0 25px #6d28d9, 0 0 45px rgba(168,85,247,0.4);
-transition:0.3s;
-}
-
-button:hover{
-transform:scale(1.03);
 }
 
 /* timer */
 .timer-box{
-width:95%;
+width:90%;
 max-width:320px;
 padding:15px;
 border-radius:15px;
@@ -103,7 +101,7 @@ font-size:38px;
 display:flex;
 justify-content:space-between;
 gap:8px;
-width:95%;
+width:90%;
 max-width:340px;
 }
 

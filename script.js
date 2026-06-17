@@ -5,17 +5,14 @@ const timer = document.getElementById("timer");
 setInterval(() => {
 if(time > 0){
 time--;
-let seconds = time.toString().padStart(2,"0");
-timer.innerText = `00:${seconds}`;
+let sec = time.toString().padStart(2,"0");
+timer.innerText = `00:${sec}`;
 }
 },1000);
 
 
 /* ⭐ STAR CANVAS */
-const canvas = document.createElement("canvas");
-canvas.id = "stars";
-document.body.appendChild(canvas);
-
+const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
@@ -23,20 +20,22 @@ canvas.height = window.innerHeight;
 
 let stars = [];
 
-for(let i=0;i<120;i++){
+/* floating stars */
+for(let i=0;i<100;i++){
 stars.push({
 x: Math.random()*canvas.width,
 y: Math.random()*canvas.height,
-r: Math.random()*2,
-d: Math.random()*1
+r: Math.random()*1.5,
+d: Math.random()*0.5
 });
 }
 
-function drawStars(){
+function draw(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
 
 ctx.fillStyle="white";
 
+/* floating stars */
 for(let i=0;i<stars.length;i++){
 let s = stars[i];
 
@@ -52,7 +51,7 @@ s.x = Math.random()*canvas.width;
 }
 }
 
-/* shooting star */
+/* shooting stars */
 if(Math.random() < 0.03){
 ctx.strokeStyle="#8b5cf6";
 ctx.beginPath();
@@ -61,10 +60,10 @@ ctx.lineTo(Math.random()*canvas.width+80,80);
 ctx.stroke();
 }
 
-requestAnimationFrame(drawStars);
+requestAnimationFrame(draw);
 }
 
-drawStars();
+draw();
 
 /* resize fix */
 window.addEventListener("resize",()=>{

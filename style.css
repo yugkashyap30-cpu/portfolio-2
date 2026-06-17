@@ -38,12 +38,13 @@ z-index:2;
 }
 
 /* live */
-.live{
-padding:8px 15px;
-border:2px solid #ff5ca8;
-border-radius:25px;
-font-size:13px;
-box-shadow:0 0 10px #ff5ca8;
+.live-btn {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.live-btn:hover {
+  transform: scale(1.05);
 }
 
 /* profile */

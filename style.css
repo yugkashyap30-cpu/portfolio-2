@@ -6,239 +6,117 @@ box-sizing:border-box;
 
 body{
 font-family:Arial,sans-serif;
-background:linear-gradient(180deg,#05010d,#12001d,#080313);
+background:linear-gradient(180deg,#07020d,#12001d,#090414);
 color:white;
-overflow-x:hidden;
 text-align:center;
 min-height:100vh;
+overflow-x:hidden;
 }
 
-body::before{
-content:"";
+/* ⭐ canvas */
+#stars{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background-image:
-radial-gradient(circle,#ffffff 1px,transparent 1px),
-radial-gradient(circle,#9b59ff 1px,transparent 1px);
-
-background-size:20px 20px,45px 45px;
-
-opacity:.35;
-
-animation:stars 12s linear infinite;
-
-pointer-events:none;
+z-index:-1;
 }
 
-@keyframes stars{
-
-from{
-transform:translateY(0);
-}
-
-to{
-transform:translateY(-180px);
-}
-
-}
-
+/* 📦 container */
 .container{
-padding:40px 20px 80px;
+padding:20px 15px;
+max-width:100%;
+overflow:hidden;
 }
 
+/* 🔴 live badge */
 .live{
-
 display:inline-block;
-
-padding:14px 26px;
-
-font-size:18px;
-
-font-weight:bold;
-
-border-radius:30px;
-
+padding:10px 18px;
 border:2px solid #ff5ca8;
-
-box-shadow:0 0 20px #ff5ca8;
-
-animation:pulse 1.5s infinite;
-
+border-radius:25px;
+font-weight:bold;
+margin-bottom:20px;
+box-shadow:0 0 15px #ff5ca8;
+font-size:14px;
 }
 
-@keyframes pulse{
-
-0%{
-transform:scale(1);
-}
-
-50%{
-transform:scale(1.05);
-}
-
-100%{
-transform:scale(1);
-}
-
-}
-
+/* 👤 profile image */
 .profile img{
-
-width:210px;
-
-height:210px;
-
-margin-top:30px;
-
+width:150px;
+height:150px;
 border-radius:50%;
-
-border:8px solid #8b5cf6;
-
-box-shadow:0 0 45px #8b5cf6;
-
-object-fit:cover;
-
+border:5px solid #8b5cf6;
+box-shadow:0 0 30px #8b5cf6;
+max-width:80vw;
 }
 
+/* 🏷 heading */
 h1{
-
-font-size:52px;
-
-margin-top:25px;
-
-line-height:1.2;
-
-text-shadow:0 0 30px #8b5cf6;
-
-animation:glow 2s infinite alternate;
-
-}
-
-@keyframes glow{
-
-from{
+font-size:28px;
+margin-top:15px;
 text-shadow:0 0 20px #8b5cf6;
-}
-
-to{
-text-shadow:0 0 40px #8b5cf6;
-}
-
+word-wrap:break-word;
 }
 
 p{
-
-font-size:20px;
-
-margin-top:12px;
-
-color:#d9d9d9;
-
+font-size:14px;
+color:#d0d0d0;
+padding:0 10px;
 }
 
+/* 🔘 button */
 button{
-
-width:100%;
-
-max-width:400px;
-
-padding:24px;
-
-font-size:26px;
-
+margin-top:25px;
+padding:15px 20px;
+font-size:16px;
 font-weight:bold;
-
 border:none;
-
-border-radius:24px;
-
+border-radius:15px;
 background:#6d28d9;
-
 color:white;
-
 cursor:pointer;
-
-margin-top:35px;
-
-box-shadow:0 0 30px #6d28d9;
-
+box-shadow:0 0 20px #6d28d9;
+width:90%;
+max-width:300px;
 }
 
+/* ⏱ timer box */
 .timer-box{
-
-margin-top:45px;
-
-padding:28px;
-
-border-radius:25px;
-
+margin-top:30px;
+padding:20px;
+border-radius:20px;
 background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(12px);
-
+backdrop-filter:blur(10px);
+max-width:100%;
 }
 
 #timer{
-
-font-size:72px;
-
-font-weight:bold;
-
+font-size:40px;
 }
 
+/* 📊 stats */
 .stats{
-
 display:flex;
-
 flex-direction:column;
-
-gap:18px;
-
-margin-top:45px;
-
+gap:10px;
+margin-top:30px;
 }
 
 .stats div{
-
-padding:22px;
-
-border-radius:20px;
-
 background:rgba(255,255,255,.08);
-
+padding:15px;
+border-radius:15px;
+width:100%;
 }
 
-.stats h2{
-
-font-size:36px;
-
-color:#ffb347;
-
+/* 📱 extra safety */
+img,button,div{
+max-width:100%;
 }
 
-.stats p{
-
-font-size:18px;
-
-}
-
-@media(min-width:768px){
-
-.container{
-
-max-width:700px;
-
-margin:auto;
-
-}
-
-.stats{
-
-flex-direction:row;
-
-}
-
+@media(max-width:768px){
+h1{font-size:26px;}
+#timer{font-size:38px;}
 }

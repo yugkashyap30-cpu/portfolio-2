@@ -1,110 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    
+    <!-- 📱 Mobile Responsive Fix (IMPORTANT) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>Meri Website</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
 
-<title>Trade x King 👑</title>
+        header {
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
 
-<link rel="stylesheet" href="style.css">
+        .container {
+            padding: 15px;
+        }
 
+        .box {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* 📱 Mobile friendly images */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
 </head>
 
 <body>
 
+<header>
+    <h1>Welcome to My Website</h1>
+</header>
+
 <div class="container">
 
-<div class="live">
+    <div class="box">
+        <h2>About</h2>
+        <p>Ye meri simple website hai jo mobile friendly hai 👍</p>
+    </div>
 
-🔴 LIVE NOW
+    <div class="box">
+        <h2>Image</h2>
+        <img src="https://via.placeholder.com/600x300" alt="sample image">
+    </div>
 
-</div>
-
-<div class="profile">
-
-<img src="https://i.imgur.com/8Km9tLL.png" alt="profile">
-
-</div>
-
-<h1>
-
-TRADE X KING 👑
-
-</h1>
-
-<p>
-
-Your Premium Trading Destination 📈
-
-</p>
-
-<a href="panel.html">
-
-<button>
-
-GET PANEL NOW
-
-</button>
-
-</a>
-
-<div class="timer-box">
-
-<h3>
-
-TIME LEFT FOR FREE JOIN
-
-</h3>
-
-<h2 id="timer">
-
-00:18
-
-</h2>
-
-<p>
-
-Offer starts counting down as soon as you open the page.
-
-</p>
+    <div class="box">
+        <h2>Click Button</h2>
+        <button onclick="alert('Hello Bhai 👋')">Click Me</button>
+    </div>
 
 </div>
-
-<div class="stats">
-
-<div>
-
-<h2>50K+</h2>
-
-<p>MEMBERS</p>
-
-</div>
-
-<div>
-
-<h2>24/7</h2>
-
-<p>SUPPORT</p>
-
-</div>
-
-<div>
-
-<h2>100%</h2>
-
-<p>SECURE</p>
-
-</div>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
 
 </body>
-
 </html>

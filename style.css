@@ -1,57 +1,122 @@
-let time = 18;
-const timer = document.getElementById("timer");
-
-setInterval(() => {
-if(time > 0){
-time--;
-timer.innerText = "00:" + time.toString().padStart(2,"0");
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
-},1000);
 
+html,body{
+width:100%;
+height:100%;
+overflow-x:hidden;
+font-family:Arial;
+background:linear-gradient(180deg,#07020d,#12001d,#090414);
+color:white;
+text-align:center;
+}
 
 /* ⭐ stars */
-const canvas = document.getElementById("stars");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let stars = [];
-
-for(let i=0;i<80;i++){
-stars.push({
-x: Math.random()*canvas.width,
-y: Math.random()*canvas.height,
-r: Math.random()*1.5,
-d: Math.random()*0.5
-});
+#stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
 }
 
-function draw(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="white";
-
-for(let i=0;i<stars.length;i++){
-let s = stars[i];
-
-ctx.beginPath();
-ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-ctx.fill();
-
-s.y += s.d;
-
-if(s.y > canvas.height){
-s.y = 0;
-s.x = Math.random()*canvas.width;
-}
+/* container */
+.container{
+min-height:100vh;
+padding:20px 10px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:15px;
 }
 
-requestAnimationFrame(draw);
+/* 🔴 live */
+.live{
+padding:8px 15px;
+border:2px solid #ff5ca8;
+border-radius:25px;
+font-size:13px;
+box-shadow:0 0 10px #ff5ca8;
 }
 
-draw();
+/* 👤 PHOTO (FIXED SIZE + GLOW) */
+.profile img{
+width:130px;
+height:130px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #a855f7;
+box-shadow:0 0 20px #a855f7, 0 0 40px rgba(168,85,247,0.4);
+}
 
-window.addEventListener("resize",()=>{
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-});
+/* text */
+h1{
+font-size:24px;
+text-shadow:0 0 15px #8b5cf6;
+}
+
+p{
+font-size:13px;
+opacity:0.8;
+}
+
+/* 🔘 BUTTON (WIDER + NICE GLOW) */
+button{
+padding:14px;
+width:95%;
+max-width:320px;
+font-size:16px;
+font-weight:bold;
+border:none;
+border-radius:15px;
+background:linear-gradient(45deg,#6d28d9,#a855f7);
+color:white;
+cursor:pointer;
+box-shadow:0 0 25px #6d28d9, 0 0 45px rgba(168,85,247,0.4);
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.03);
+}
+
+/* timer */
+.timer-box{
+width:95%;
+max-width:320px;
+padding:15px;
+border-radius:15px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(8px);
+}
+
+#timer{
+font-size:38px;
+}
+
+/* stats */
+.stats{
+display:flex;
+justify-content:space-between;
+gap:8px;
+width:95%;
+max-width:340px;
+}
+
+.stats div{
+flex:1;
+background:rgba(255,255,255,.08);
+padding:10px;
+border-radius:12px;
+font-size:12px;
+}
+
+/* mobile */
+@media(max-width:768px){
+h1{font-size:22px;}
+#timer{font-size:34px;}
+}

@@ -1,52 +1,122 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Trade x King</title>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+html,body{
+width:100%;
+height:100%;
+overflow-x:hidden;
+font-family:Arial;
+background:linear-gradient(180deg,#07020d,#12001d,#090414);
+color:white;
+text-align:center;
+}
 
-<link rel="stylesheet" href="style.css">
-</head>
+/* ⭐ stars */
+#stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
 
-<body>
+/* container */
+.container{
+min-height:100vh;
+padding:20px 10px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
 
-<div class="container">
+/* 🔴 live */
+.live{
+padding:8px 15px;
+border:2px solid #ff5ca8;
+border-radius:25px;
+font-size:13px;
+box-shadow:0 0 10px #ff5ca8;
+}
 
-<div class="live">🔴 LIVE NOW</div>
+/* 👤 PHOTO (FIXED SIZE + GLOW) */
+.profile img{
+width:130px;
+height:130px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #a855f7;
+box-shadow:0 0 20px #a855f7, 0 0 40px rgba(168,85,247,0.4);
+}
 
-<div class="profile">
-<img src="https://via.placeholder.com/200" alt="">
-</div>
+/* text */
+h1{
+font-size:24px;
+text-shadow:0 0 15px #8b5cf6;
+}
 
-<h1>TRADE X KING 👑</h1>
+p{
+font-size:13px;
+opacity:0.8;
+}
 
-<p>Your Premium Trading Destination 📈</p>
+/* 🔘 BUTTON (WIDER + NICE GLOW) */
+button{
+padding:14px;
+width:95%;
+max-width:320px;
+font-size:16px;
+font-weight:bold;
+border:none;
+border-radius:15px;
+background:linear-gradient(45deg,#6d28d9,#a855f7);
+color:white;
+cursor:pointer;
+box-shadow:0 0 25px #6d28d9, 0 0 45px rgba(168,85,247,0.4);
+transition:0.3s;
+}
 
-<a href="panel.html">
-<button>GET PANEL NOW</button>
-</a>
+button:hover{
+transform:scale(1.03);
+}
 
-<div class="timer-box">
+/* timer */
+.timer-box{
+width:95%;
+max-width:320px;
+padding:15px;
+border-radius:15px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(8px);
+}
 
-<h3>TIME LEFT FOR FREE JOIN</h3>
-<h2 id="timer">00:18</h2>
-<p>Offer starts as soon as you open the page.</p>
+#timer{
+font-size:38px;
+}
 
-</div>
+/* stats */
+.stats{
+display:flex;
+justify-content:space-between;
+gap:8px;
+width:95%;
+max-width:340px;
+}
 
-<div class="stats">
+.stats div{
+flex:1;
+background:rgba(255,255,255,.08);
+padding:10px;
+border-radius:12px;
+font-size:12px;
+}
 
-<div><h2>50K+</h2><p>MEMBERS</p></div>
-<div><h2>24/7</h2><p>SUPPORT</p></div>
-<div><h2>100%</h2><p>SECURE</p></div>
-
-</div>
-
-</div>
-
-<canvas id="stars"></canvas>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+/* mobile */
+@media(max-width:768px){
+h1{font-size:22px;}
+#timer{font-size:34px;}
+}

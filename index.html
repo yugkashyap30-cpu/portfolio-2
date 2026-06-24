@@ -14,6 +14,7 @@
 !function(f,b,e,v,n,t,s)
 {
 if(f.fbq)return;
+
 n=f.fbq=function(){
 n.callMethod ?
 n.callMethod.apply(n,arguments) : n.queue.push(arguments)
@@ -44,6 +45,7 @@ fbq('track', 'PageView');
 <img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1377883427732736&ev=PageView&noscript=1"/>
 </noscript>
+
 <!-- End Meta Pixel Code -->
 
 </head>
@@ -64,8 +66,7 @@ src="https://www.facebook.com/tr?id=1377883427732736&ev=PageView&noscript=1"/>
 
 <p>Your Premium Trading Destination 📈</p>
 
-<a href="https://t.me/+bBXXEjF1i2cwYmM1"
-onclick="fbq('track','Lead'); setTimeout(()=>window.location.href='https://t.me/+bBXXEjF1i2cwYmM1',500); return false;">
+<a id="joinBtn" href="https://t.me/+bBXXEjF1i2cwYmM1">
 
 <button>SUBSCRIBE NOW</button>
 
@@ -101,6 +102,24 @@ onclick="fbq('track','Lead'); setTimeout(()=>window.location.href='https://t.me/
 </div>
 
 </div>
+
+<script>
+
+document.getElementById("joinBtn").addEventListener("click", function(e){
+
+e.preventDefault();
+
+fbq('track','Lead');
+
+setTimeout(function(){
+
+window.location.href="https://t.me/+bBXXEjF1i2cwYmM1";
+
+},1500);
+
+});
+
+</script>
 
 <script src="script.js"></script>
 
